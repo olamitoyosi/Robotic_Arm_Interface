@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Robotic_Arm_Interface</title>
+</head>
+<body>
+    <div class="robot-controls-container">
+    
+    <div class="control-card">
+        <h2>Base Movement</h2>
+        <div class="d-pad">
+            <button class="d-btn up" data-command="forward">▲</button>
+            <button class="d-btn left" data-command="left">◄</button>
+            <div class="d-pad-center"></div>
+            <button class="d-btn right" data-command="right">►</button>
+            <button class="d-btn down" data-command="backward">▼</button>
+        </div>
+    </div>
+
+    <div class="control-card">
+        <h2>Arm Joints</h2>
+        
+        <div class="joint-control">
+            <div class="joint-label">
+                <span>Joint 1: Base</span>
+                <span id="base-val">90°</span>
+            </div>
+            <div class="slider-wrapper">
+                <button class="nudge-btn" onclick="nudge('base-slider', -1)">-</button>
+                <input type="range" id="base-slider" min="0" max="180" value="90" class="joint-slider">
+                <button class="nudge-btn" onclick="nudge('base-slider', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="joint-control">
+            <div class="joint-label">
+                <span>Joint 2: Elbow</span>
+                <span id="elbow-val">45°</span>
+            </div>
+            <div class="slider-wrapper">
+                <button class="nudge-btn" onclick="nudge('elbow-slider', -1)">-</button>
+                <input type="range" id="elbow-slider" min="0" max="180" value="45" class="joint-slider">
+                <button class="nudge-btn" onclick="nudge('elbow-slider', 1)">+</button>
+            </div>
+        </div>
+
+        <div class="joint-control">
+            <div class="joint-label">
+                <span>Gripper Mechanism</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="gripper-toggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </div>
+</div>
+</body>
+</html>
